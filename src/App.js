@@ -1,9 +1,20 @@
-import Game from './pages/game/Game.jsx';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Game from './pages/Game/Game.jsx';
+import Home from './pages/Home/Home.jsx';
+import NotFound from './pages/NotFound/NotFound.jsx';
 import './App.css';
 
 function App() {
   return (
-    <Game></Game>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/"component={Home}/>
+        <Route exact path="/play" component={Game} />
+        <Route component={NotFound}></Route>
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 

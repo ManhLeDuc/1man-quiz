@@ -1,7 +1,6 @@
 .answer {
-  width: 30%;
+  width: 100%;
   padding: 10px;
-  
   text-align: center;
   background: linear-gradient(#0e0124, #22074d);
   border: 1px solid white;
@@ -9,6 +8,7 @@
   font-weight: 300;
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
 .answer:hover,
