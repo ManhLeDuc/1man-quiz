@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Game from './pages/Game/Game.jsx';
 import Home from './pages/Home/Home.jsx';
 import Profile from './pages/Profile/Profile.jsx';
+import QuestionList from './pages/QuestionList/QuestionList.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/"component={Home}/>
         <Route exact path="/play" component={Game} />
         <Route exact path="/profile" component={Profile}/>
+        <Route exact path="/questionlist" component={QuestionList}/>
         <Route component={NotFound}></Route>
       </Switch>
     </BrowserRouter>
