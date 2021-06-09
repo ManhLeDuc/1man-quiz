@@ -1,0 +1,10 @@
+.question {
+  width: 100%;
+  background: linear-gradient(#100241, black);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-size: 25px;
+}

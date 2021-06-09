@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomNavbar from '../../components/Navbar/CustomNavbar';
 import background from "../../assets/bg.jpg";
-import QuestionItem from '../../components/QuestionItem/QuestionItem';
-import Pagination from '../../components/CustomPagination/Pagination';
 
 import './style.css';
 
@@ -18,7 +16,7 @@ const styles = {
   height: '100vh'
 };
 
-export default function QuestionList() {
+export default function Rank() {
 
   return (
     <div style={styles}>
@@ -26,18 +24,11 @@ export default function QuestionList() {
       <Container fluid style={{ marginTop: "5%" }}>
         <Row className="justify-content-center">
           <Col lg="9" xl="9">
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
-            <QuestionItem></QuestionItem>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
           </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Pagination></Pagination>
         </Row>
       </Container>
     </div>

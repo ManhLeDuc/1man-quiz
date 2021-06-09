@@ -13,7 +13,7 @@ export default function GameInfo() {
       </Col>
       <Col sm="3" md="3" lg="3" xl="3" style={{textAlign: "center"}}>
         <Alert variant='dark'>
-          Score: 100
+          Left: 3
         </Alert>
       </Col>
     </Row>
