@@ -27,7 +27,10 @@ export default function Profile() {
           <Col lg="9" xl="9">
             <Row className="justify-content-around my-5">
               <Col sm="6" md="6" lg="3" xl="3">
-                <Image src="holder.js/171x180" roundedCircle className="photo" />
+                <Image src="holder.js/171x180" roundedCircle style={{
+                  height: '200px',
+                  width: '200px'
+                }} />
               </Col>
               <Col sm="9" md="9" lg="6" xl="6" className="align-items-center">
                 <Row className='my-lg-4'>
@@ -40,10 +43,10 @@ export default function Profile() {
             </Row>
             <Row className="justify-content-around my-5" >
               <Col sm="9" md="9" lg="5" xl="5">
-                <Button variant="secondary" style={{ width:'100%', fontSize:'25px' }}>Update</Button>
+                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Update</Button>
               </Col>
               <Col sm="9" md="9" lg="5" xl="5">
-              <Button variant="secondary" style={{ width:'100%', fontSize:'25px' }}>Your Questions</Button>
+                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Your Questions</Button>
               </Col>
             </Row>
           </Col>
