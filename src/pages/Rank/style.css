@@ -1,0 +1,47 @@
+.gold {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: gold;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 25px;
+  color: white;
+}
+
+.silver {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: silver;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
+}
+
+.bronze {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: chocolate;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 25px;
+  color: white;
+}
+
+.yourRank {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 25px;
+  color: white;
+}

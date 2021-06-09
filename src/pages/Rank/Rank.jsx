@@ -24,9 +24,26 @@ export default function Rank() {
       <Container fluid style={{ marginTop: "5%" }}>
         <Row className="justify-content-center">
           <Col lg="9" xl="9">
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
+            <Row className="gold my-5">
+              <Col sm="3" md="3" lg="3" xl="3" >1</Col>
+              <Col sm="6" md="6" lg="6" xl="6" >NickName</Col>
+              <Col sm="3" md="3" lg="3" xl="3" >Score</Col>
+            </Row>
+            <Row className="silver my-5">
+              <Col sm="3" md="3" lg="3" xl="3" >2</Col>
+              <Col sm="6" md="6" lg="6" xl="6" >NickName</Col>
+              <Col sm="3" md="3" lg="3" xl="3" >Score</Col>
+            </Row>
+            <Row className="bronze my-5">
+              <Col sm="3" md="3" lg="3" xl="3" >3</Col>
+              <Col sm="6" md="6" lg="6" xl="6" >NickName</Col>
+              <Col sm="3" md="3" lg="3" xl="3" >Score</Col>
+            </Row>
+            <Row className="yourRank my-5">
+              <Col sm="3" md="3" lg="3" xl="3" >Your rank: 5</Col>
+              <Col sm="6" md="6" lg="6" xl="6" >NickName</Col>
+              <Col sm="3" md="3" lg="3" xl="3" >Score</Col>
+            </Row>
             <Row></Row>
           </Col>
         </Row>
