@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomNavbar from '../../components/Navbar/CustomNavbar';
 import background from "../../assets/bg.jpg";
-import QuestionItem from '../../components/QuestionItem/QuestionItem';
-import Pagination from '../../components/CustomPagination/Pagination';
+import QuestionItem from './QuestionItem/QuestionItem';
+import Pagination from './CustomPagination/Pagination';
 
 import './style.css';
 

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Game from './pages/Game/Game.jsx';
 import Home from './pages/Home/Home.jsx';
 import Rank from './pages/Rank/Rank.jsx';
+import Rule from './pages/Rule/Rule.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile.jsx'
 import QuestionList from './pages/QuestionList/QuestionList.jsx';
@@ -18,6 +19,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/"component={Home}/>
+        <Route exact path="/rule" component={Rule} />
         <Route exact path="/play" component={Game} />
         <Route exact path="/rank" component={Rank} />
         <Route exact path="/profile" component={Profile}/>

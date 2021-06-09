@@ -1,0 +1,12 @@
+.ruleDetail {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 25px;
+  color: white;
+}
+

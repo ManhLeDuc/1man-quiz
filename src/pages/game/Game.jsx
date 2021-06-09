@@ -2,8 +2,8 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import GamePlay from '../../components/GamePlay/GamePlay';
-import GameInfo from '../../components/GameInfo/GameInfo';
+import GamePlay from './GamePlay/GamePlay';
+import GameInfo from './GameInfo/GameInfo';
 import CustomNavbar from '../../components/Navbar/CustomNavbar';
 import background from "../../assets/bg.jpg";
 

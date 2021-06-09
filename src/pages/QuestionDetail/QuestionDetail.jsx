@@ -2,11 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import GamePlay from '../../components/GamePlay/GamePlay';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import CustomNavbar from '../../components/Navbar/CustomNavbar';
 import background from "../../assets/bg.jpg";
+
+import './style.css';
 
 const styles = {
   backgroundImage: `url(${background})`,
@@ -41,7 +42,53 @@ const QuestionDetail = () => {
                 </Row>
               </Col>
             </Row>
-            <GamePlay></GamePlay>
+            <Row className="justify-content-md-center">
+
+              <Container fluid>
+                <Row className="justify-content-center my-4">
+                  <Col>
+                    <div
+                      className="question"
+                      onClick={() => { }}
+                    >
+                      {"hello"}
+                    </div>
+                  </Col>
+                </Row>
+                <Row className="justify-content-between my-lg-4 my-md-4">
+                  <Col sm="5" md="5" lg="5" xl="5">
+                    <div
+                      className="answerDetail"
+                    >
+                      {"hello"}
+                    </div>
+                  </Col>
+                  <Col sm="5" md="5" lg="5" xl="5">
+                    <div
+                      className="answerDetail"
+                    >
+                      {"hello"}
+                    </div>
+                  </Col>
+                </Row>
+                <Row className="justify-content-between my-lg-4 my-md-4">
+                  <Col sm="5" md="5" lg="5" xl="5">
+                    <div
+                      className="answerDetail"
+                    >
+                      {"hello"}
+                    </div>
+                  </Col>
+                  <Col sm="5" md="5" lg="5" xl="5">
+                    <div
+                      className="answerDetail"
+                    >
+                      {"hello"}
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </Row>
             <Row className="justify-content-end my-lg-4 my-md-4" >
               <Col sm="3" md="3" lg="3" xl="3">
                 <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Confirm</Button>

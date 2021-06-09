@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import CustomNavbar from '../../components/Navbar/CustomNavbar';
 import background from "../../assets/bg.jpg";
-import Menu from "../../components/Menu/Menu";
+import Menu from "./Menu/Menu";
 
 const styles = {
   backgroundImage: `url(${background})`,

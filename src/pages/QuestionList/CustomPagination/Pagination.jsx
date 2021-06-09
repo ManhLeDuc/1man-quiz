@@ -32,8 +32,6 @@ export default function Pagination() {
 
   const paginationRender = (
     <div className="flex-container">
-      <div> currentPage : {currentPage} </div>
-
       <div className="paginate-ctn">
         <div className="round-effect" onClick={prevPage}> &lsaquo; </div>
         {items}
