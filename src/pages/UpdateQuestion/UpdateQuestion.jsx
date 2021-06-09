@@ -7,6 +7,8 @@ import background from "../../assets/bg.jpg";
 import QuestionInput from '../../components/QuestionInput/QuestionInput';
 import AnswerInput from '../../components/AnswerInput/AnswerInput';
 import Button from 'react-bootstrap/Button';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const styles = {
   backgroundImage: `url(${background})`,
@@ -17,7 +19,7 @@ const styles = {
   height: '100vh'
 };
 
-const ChangeQuestion = () => {
+const UpdateQuestion = () => {
   return (
     <div style={styles}>
       <CustomNavbar></CustomNavbar>
@@ -40,10 +42,25 @@ const ChangeQuestion = () => {
                 </Row>
               </Container>
             </Row>
-            <Row className="justify-content-end my-lg-4 my-md-4" >
+            <Row className="justify-content-between my-lg-4 my-md-4" >
+              <Col sm="3" md="3" lg="3" xl="3">
+                <DropdownButton
+                  variant={'secondary'}
+                  title={'Answer'}
+                  style={{ width: '100%', fontSize: '25px' }}
+                >
+                  <Dropdown.Item >A</Dropdown.Item>
+                  <Dropdown.Item >B</Dropdown.Item>
+                  <Dropdown.Item active>
+                    C
+                  </Dropdown.Item>
+                  <Dropdown.Item >D</Dropdown.Item>
+                </DropdownButton>
+              </Col>
               <Col sm="3" md="3" lg="3" xl="3">
                 <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Submit</Button>
               </Col>
+
             </Row>
           </Col>
         </Row>
@@ -53,4 +70,4 @@ const ChangeQuestion = () => {
   );
 };
 
-export default ChangeQuestion;
+export default UpdateQuestion;
