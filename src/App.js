@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import CustomNavbar from './components/Navbar/CustomNavbar.jsx';
@@ -12,7 +12,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile.jsx'
 import QuestionList from './pages/QuestionList/QuestionList.jsx';
 import QuestionDetail from './pages/QuestionDetail/QuestionDetail.jsx';
 import UpdateQuestion from './pages/UpdateQuestion/UpdateQuestion.jsx';
-import NotFound from './pages/NotFound/NotFound.jsx';
+import Login from './pages/Login/Login.jsx';
 
 import background from "./assets/bg.jpg";
 
@@ -28,6 +28,7 @@ const styles = {
 };
 
 function App() {
+
   return (
     <div style={styles}>
       <CustomNavbar></CustomNavbar>
@@ -42,8 +43,6 @@ function App() {
           <Route exact path="/questions" component={QuestionList} />
           <Route exact path="/questions/detail" component={QuestionDetail} />
           <Route exact path="/questions/update" component={UpdateQuestion} />
-
-          <Route component={NotFound}></Route>
         </Switch>
       </BrowserRouter>
     </div>
