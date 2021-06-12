@@ -5,31 +5,62 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
-export default function Profile() {
-  return (
-    <Container fluid style={{ marginTop: "5%" }}>
-      <Row className="justify-content-center">
-        <Col lg="9" xl="9">
-          <Row className="justify-content-center my-5">
+import { authenticationService } from '../../services/authentication.service';
+import { authHeader } from '../../helpers';
 
-            <Image src="holder.js/171x180" roundedCircle className="photo" style={{
-              height: '250px',
-              width: '250px'
-            }} />
 
-          </Row>
-          <Row className="justify-content-center my-5">
-            <Col sm="6" md="6" lg="3" xl="3">
-              <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Upload</Button>
-            </Col>
-          </Row>
-          <Row className="justify-content-around my-5">
-            <Col sm="6" md="6" lg="6" xl="6">
-              <input className='info' placeholder='NickName'></input>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  )
+class Profile extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    if (!authenticationService.currentUserValue) {
+      window.location.href = '/'
+    }
+    else {
+      this.state = {
+        answers: ["", "", "", ""],
+        question: "",
+        remains: 0,
+        currentScore: 0,
+      };
+    }
+
+
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return (
+      <Container fluid style={{ marginTop: "5%" }}>
+        <Row className="justify-content-center">
+          <Col lg="9" xl="9">
+            <Row className="justify-content-center my-5">
+
+              <Image src="holder.js/171x180" roundedCircle className="photo" style={{
+                height: '250px',
+                width: '250px'
+              }} />
+
+            </Row>
+            <Row className="justify-content-center my-5">
+              <Col sm="6" md="6" lg="3" xl="3">
+                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Upload</Button>
+              </Col>
+            </Row>
+            <Row className="justify-content-around my-5">
+              <Col sm="6" md="6" lg="6" xl="6">
+                <input className='info' placeholder='NickName'></input>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    )
+  }
 }
+
+export default Profile;

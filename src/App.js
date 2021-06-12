@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import CustomNavbar from './components/Navbar/CustomNavbar.jsx';
@@ -12,6 +12,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile.jsx'
 import QuestionList from './pages/QuestionList/QuestionList.jsx';
 import QuestionDetail from './pages/QuestionDetail/QuestionDetail.jsx';
 import UpdateQuestion from './pages/UpdateQuestion/UpdateQuestion.jsx';
+import Signup from './pages/Signup/Signup.jsx';
 import Login from './pages/Login/Login.jsx';
 
 import background from "./assets/bg.jpg";
@@ -22,7 +23,7 @@ const styles = {
   backgroundImage: `url(${background})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
+  backgroundRepeat: 'repeat-y',
   width: '100vw',
   height: '100vh'
 };
@@ -35,6 +36,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
           <Route exact path="/rule" component={Rule} />
           <Route exact path="/play" component={Game} />
           <Route exact path="/rank" component={Rank} />

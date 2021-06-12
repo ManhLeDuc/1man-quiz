@@ -16,6 +16,7 @@
   background: linear-gradient(#0e0124, #22074d);
   border: 1px solid white;
   border-radius: 15px;
+  cursor: pointer;
 }
 .menu-item:hover{
   text-shadow: 2px 4px 0px rgba(85, 85, 158, 0.5);

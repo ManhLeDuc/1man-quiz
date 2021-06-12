@@ -3,14 +3,13 @@ import Col from 'react-bootstrap/Col';
 
 import './style.css'
 
-export default function Question() {
+export default function Question({text}) {
   return (
     <Col>
       <div
         className="question"
-        onClick={() => { }}
       >
-        {"hello"}
+        {text}
       </div>
     </Col>
 
