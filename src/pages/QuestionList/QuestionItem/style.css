@@ -1,7 +1,6 @@
 .field {
   width: 100%;
   padding: 10px;
-  background: linear-gradient(#0e0124, #22074d);
   border: 1px solid white;
   font-weight: 300;
   font-size: 20px;
@@ -12,4 +11,22 @@
 .field:hover,
 .field.active {
   background: mediumblue;
+}
+
+.field1 {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.activeItem {
+  background: green;
+}
+
+.notActiveItem {
+  background: red;
 }

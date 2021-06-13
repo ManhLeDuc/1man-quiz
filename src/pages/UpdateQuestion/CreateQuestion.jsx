@@ -28,6 +28,8 @@ class UpdateQuestion extends React.Component {
         currentScore: 0,
       };
     }
+
+
   }
 
   componentDidMount() {

@@ -12,6 +12,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile.jsx'
 import QuestionList from './pages/QuestionList/QuestionList.jsx';
 import QuestionDetail from './pages/QuestionDetail/QuestionDetail.jsx';
 import UpdateQuestion from './pages/UpdateQuestion/UpdateQuestion.jsx';
+import CreateQuestion from './pages/UpdateQuestion/CreateQuestion.jsx';
 import Signup from './pages/Signup/Signup.jsx';
 import Login from './pages/Login/Login.jsx';
 
@@ -46,6 +47,7 @@ function App() {
           <Route exact path="/questions" component={QuestionList} />
           <Route exact path="/questions/detail" component={QuestionDetail} />
           <Route exact path="/questions/update" component={UpdateQuestion} />
+          <Route exact path="/questions/create" component={CreateQuestion} />
         </Switch>
       </BrowserRouter>
     </div>

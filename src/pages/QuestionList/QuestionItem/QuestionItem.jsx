@@ -4,12 +4,13 @@ import Col from 'react-bootstrap/Col';
 
 import './style.css';
 
-export default function QuestionItem() {
+export default function QuestionItem({question, questionId, isActive, createAt}) {
+  const date = new Date(createAt)
+  const className = isActive?"activeItem":"notActiveItem"
   return (
-    <Row className='my-2'>
-      <Col sm="4" md="4" lg="4" xl="4" className='field text-truncate'>Question hellooooooooooooooooooooooooo</Col>
-      <Col sm="2" md="2" lg="2" xl="2" className='field'>Date</Col>
-      <Col sm="2" md="2" lg="2" xl="2" className='field'>isActive</Col>
+    <Row className={`my-2 ${className}`}>
+      <Col sm="5" md="5" lg="5" xl="5" className='field1 text-truncate'>{question}</Col>
+      <Col sm="3" md="3" lg="3" xl="3" className='field1'>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</Col>
       <Col sm="2" md="2" lg="2" xl="2" className='field'>Detail</Col>
       <Col sm="2" md="2" lg="2" xl="2" className='field'>Change</Col>
     </Row>
