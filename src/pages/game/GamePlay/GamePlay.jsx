@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+import { authHeader } from '../../../helpers';
+
 export default function GamePlay({ updateQuestion, answers, question }) {
 
   const [active, setActive] = React.useState(true);
@@ -13,15 +15,27 @@ export default function GamePlay({ updateQuestion, answers, question }) {
   const [gameOverScore, setGameOverScore] = React.useState(-1);
   const [bestScore, setBestScore] = React.useState(0);
 
-  const callback = (gameOverScore) => {
-    if (gameOverScore !== -1) {
-      setGameOverScore(gameOverScore);
-      setBestScore(0);
-      setShow(true);
+  const callback = async (gameOverScore) => {
+    try{
+      if (gameOverScore !== -1) {
+        setGameOverScore(gameOverScore);
+        const result = await fetch(`http://localhost:3001/api/play`, {
+          method: 'PUT',
+          headers: authHeader(),
+          credentials: 'include',
+        }).then((res) => { return res.json(); });
+        if(result.bestScore){
+          setBestScore(result.bestScore);
+        } 
+        setShow(true);
+      }
+      else {
+        updateQuestion();
+        setActive(true);
+      }
     }
-    else {
-      updateQuestion();
-      setActive(true);
+    catch(error){
+      window.alert(error.message);
     }
 
   }

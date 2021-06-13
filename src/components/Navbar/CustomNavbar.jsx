@@ -1,21 +1,29 @@
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Image from 'react-bootstrap/Image';
 
 import { authenticationService } from '../../services/authentication.service';
 
-export default function CustomNavbar() {
-  if (authenticationService.currentUserValue) {
+export default function CustomNavbar({ login, username, email, url }) {
+  if (login) {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">HomePage</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
+            <Nav.Link>{username}</Nav.Link>
+            <Nav.Link>{email}</Nav.Link>
           </Nav>
-          { }
+
           <Nav>
-            <Nav.Link>Picture</Nav.Link>
+            <Nav.Link href="/profile">
+              <Image src={`http://localhost:3001${url}`} roundedCircle style={{
+                height: '50px',
+                width: '50px'
+              }} />
+            </Nav.Link>
             <Nav.Link eventKey={2} onClick={() => {
               authenticationService.logout();
               window.location.href = "/"

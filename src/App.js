@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import CustomNavbar from './components/Navbar/CustomNavbar.jsx';
+import CustomNavbar from './components/Navbar/Wrapper';
 
 import Game from './pages/Game/Game.jsx';
 import Home from './pages/Home/Home.jsx';

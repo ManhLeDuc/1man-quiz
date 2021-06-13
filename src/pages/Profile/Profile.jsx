@@ -20,16 +20,45 @@ class Profile extends React.Component {
     }
     else {
       this.state = {
-        answers: ["", "", "", ""],
-        question: "",
-        remains: 0,
-        currentScore: 0,
+        url: "",
+        bestScore: 0,
+        name: "",
       };
     }
   }
 
   componentDidMount() {
+    if (authenticationService.currentUserValue) {
+      fetch(`http://localhost:3001/api/me`, {
+        method: 'GET',
+        headers: authHeader(),
+        credentials: 'include',
 
+      })
+        .then((res) => { return res.json(); })
+        .then((data) => {
+          console.log(data);
+          if (data.name) {
+            this.setState({
+              name: data.name,
+              url: data.avatarUrl,
+              bestScore: data.bestScore,
+            });
+          }
+          else {
+            this.setState({
+              name: "",
+              url: "",
+              bestScore: 0,
+            })
+            authenticationService.logout();
+          }
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   render() {
@@ -39,26 +68,36 @@ class Profile extends React.Component {
           <Col lg="9" xl="9">
             <Row className="justify-content-around my-5">
               <Col sm="6" md="6" lg="3" xl="3">
-                <Image src="holder.js/171x180" roundedCircle style={{
-                  height: '200px',
-                  width: '200px'
+                <Image src={`http://localhost:3001/${this.state.url}`} roundedCircle style={{
+                  height: '220px',
+                  width: '220px'
                 }} />
               </Col>
               <Col sm="9" md="9" lg="6" xl="6" className="align-items-center">
                 <Row className='my-lg-4'>
-                  <div className='info'>NickName</div>
+                  <div className='info'>NickName: {this.state.name}</div>
                 </Row>
                 <Row className='my-lg-4'>
-                  <div className='info'>Best Score</div>
+                  <div className='info'>Best Score: {this.state.bestScore}</div>
                 </Row>
               </Col>
             </Row>
             <Row className="justify-content-around my-5" >
               <Col sm="9" md="9" lg="5" xl="5">
-                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Update</Button>
+                <Button variant="secondary"
+                  style={{ width: '100%', fontSize: '25px' }}
+                  onClick={() => window.location.href = '/profile/update'}
+                >
+                  Update
+                </Button>
               </Col>
               <Col sm="9" md="9" lg="5" xl="5">
-                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Your Questions</Button>
+                <Button variant="secondary"
+                  style={{ width: '100%', fontSize: '25px' }}
+                  onClick={() => window.location.href = '/questions'}
+                >
+                  Your Questions
+                </Button>
               </Col>
             </Row>
           </Col>
