@@ -55,11 +55,11 @@ export default function GamePlay({ updateQuestion, answers, question }) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center" style={{fontSize:'12px'}}>
             {gameOverScore}
           </Row>
-          <Row className="justify-content-center">
-            {bestScore}
+          <Row className="justify-content-center" style={{fontSize:'14px'}}>
+            Your Best Score: {bestScore}
           </Row>
         </Modal.Body>
         <Modal.Footer>
