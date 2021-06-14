@@ -12,7 +12,7 @@ import { authenticationService } from '../../services/authentication.service';
 import { authHeader } from '../../helpers';
 
 
-class UpdateQuestion extends React.Component {
+class CreateQuestion extends React.Component {
 
   constructor(props) {
     super(props);
@@ -22,18 +22,78 @@ class UpdateQuestion extends React.Component {
     }
     else {
       this.state = {
-        answers: ["", "", "", ""],
         question: "",
-        remains: 0,
-        currentScore: 0,
+        answers: ["", "", "", ""],
+        correctIndex: 0,
       };
     }
+  }
 
-
+  handleAnswerChange = (text, index) => {
+    let tempAnswers = [...this.state.answers];
+    tempAnswers[index] = text;
+    this.setState({
+      answers: tempAnswers,
+    })
   }
 
   componentDidMount() {
 
+  }
+
+  handleSubmit() {
+
+    if (!this.state.question) {
+      window.alert("Empty Question");
+      return;
+    }
+
+    for (let a of this.state.answers) {
+      if (!a) {
+        window.alert("Empty answer");
+        return;
+      }
+    }
+
+    let answersSet = new Set(this.state.answers);
+    if (answersSet.size !== this.state.answers.length) {
+      window.alert("Duplicated Answer");
+      return;
+    }
+
+    if (authenticationService.currentUserValue) {
+
+      let question = this.state.question;
+      let correct_answer = this.state.answers[this.state.correctIndex];
+      let incorrect_answers = this.state.answers.filter((answer, index) => index !== this.state.correctIndex);
+
+      fetch(`http://localhost:3001/api/questions`, {
+        method: 'POST',
+        headers: authHeader(),
+        credentials: 'include',
+        body: JSON.stringify({ question: question, correct_answer: correct_answer, incorrect_answers: incorrect_answers })
+      })
+        .then((res) => { return res.json(); })
+        .then((data) => {
+          if (data.success) {
+            window.alert("Question created!!!");
+            window.location.href = "/questions"
+          }
+          else {
+            window.alert("Something went wrong, please refresh page!!!");
+            // authenticationService.logout();
+          }
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }
+
+
+  getAnswerText = () => {
+    return this.state.answers[this.state.correctIndex];
   }
 
   render() {
@@ -45,15 +105,31 @@ class UpdateQuestion extends React.Component {
 
               <Container fluid>
                 <Row className="justify-content-center my-4">
-                  <QuestionInput></QuestionInput>
+                  <QuestionInput value={this.state.question} onChange={(e) => { this.setState({ question: e.target.value }) }}></QuestionInput>
                 </Row>
                 <Row className="justify-content-between my-lg-4 my-md-4">
-                  <AnswerInput />
-                  <AnswerInput />
+                  <AnswerInput onChange={(e) => {
+                    this.handleAnswerChange(e.target.value, 0);
+                  }}
+                    value={this.state.answers[0]}
+                    isCorrect={this.state.correctIndex === 0} />
+                  <AnswerInput onChange={(e) => {
+                    this.handleAnswerChange(e.target.value, 1);
+                  }}
+                    value={this.state.answers[1]}
+                    isCorrect={this.state.correctIndex === 1} />
                 </Row>
                 <Row className="justify-content-between my-lg-4 my-md-4">
-                  <AnswerInput />
-                  <AnswerInput />
+                  <AnswerInput onChange={(e) => {
+                    this.handleAnswerChange(e.target.value, 2);
+                  }}
+                    value={this.state.answers[2]}
+                    isCorrect={this.state.correctIndex === 2} />
+                  <AnswerInput onChange={(e) => {
+                    this.handleAnswerChange(e.target.value, 3);
+                  }}
+                    value={this.state.answers[3]}
+                    isCorrect={this.state.correctIndex === 3} />
                 </Row>
               </Container>
             </Row>
@@ -61,19 +137,39 @@ class UpdateQuestion extends React.Component {
               <Col sm="3" md="3" lg="3" xl="3">
                 <DropdownButton
                   variant={'secondary'}
-                  title={'Answer'}
+                  title={this.getAnswerText()}
                   style={{ width: '100%', fontSize: '25px' }}
                 >
-                  <Dropdown.Item >A</Dropdown.Item>
-                  <Dropdown.Item >B</Dropdown.Item>
-                  <Dropdown.Item active>
-                    C
-                    </Dropdown.Item>
-                  <Dropdown.Item >D</Dropdown.Item>
+                  <Dropdown.Item active={this.state.correctIndex === 0}
+                    onClick={() => {
+                      this.setState({ correctIndex: 0 });
+                    }}
+                  >
+                    {this.state.answers[0]}
+                  </Dropdown.Item>
+                  <Dropdown.Item active={this.state.correctIndex === 1}
+                    onClick={() => {
+                      this.setState({ correctIndex: 1 });
+                    }}
+                  >
+                    {this.state.answers[1]}
+                  </Dropdown.Item>
+                  <Dropdown.Item active={this.state.correctIndex === 2}
+                    onClick={() => {
+                      this.setState({ correctIndex: 2 });
+                    }}>
+                    {this.state.answers[2]}
+                  </Dropdown.Item>
+                  <Dropdown.Item active={this.state.correctIndex === 3}
+                    onClick={() => {
+                      this.setState({ correctIndex: 3 });
+                    }}>
+                    {this.state.answers[3]}
+                  </Dropdown.Item>
                 </DropdownButton>
               </Col>
               <Col sm="3" md="3" lg="3" xl="3">
-                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }}>Submit</Button>
+                <Button variant="secondary" style={{ width: '100%', fontSize: '25px' }} onClick={() => { this.handleSubmit() }}>Create</Button>
               </Col>
 
             </Row>
@@ -85,4 +181,4 @@ class UpdateQuestion extends React.Component {
   }
 }
 
-export default UpdateQuestion;
+export default CreateQuestion;

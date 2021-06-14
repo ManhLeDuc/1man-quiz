@@ -9,3 +9,11 @@
   font-size: 20px;
   color: white;
 }
+
+.answerInput.correct{
+  background: green;
+}
+
+.answerInput.incorrect{
+  background: red;
+}

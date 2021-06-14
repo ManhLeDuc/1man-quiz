@@ -3,12 +3,11 @@ import Col from 'react-bootstrap/Col';
 
 import './style.css'
 
-export default function QuestionInput() {
+export default function QuestionInput({value, onChange}) {
   return (
     <Col>
       <input
-        className="question"
-        onClick={() => { }}
+        className="question" value={value} onChange={onChange}   
       >
       </input>
     </Col>

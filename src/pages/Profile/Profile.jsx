@@ -37,7 +37,6 @@ class Profile extends React.Component {
       })
         .then((res) => { return res.json(); })
         .then((data) => {
-          console.log(data);
           if (data.name) {
             this.setState({
               name: data.name,

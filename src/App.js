@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import CustomNavbar from './components/Navbar/Wrapper';
 
@@ -15,6 +15,7 @@ import UpdateQuestion from './pages/UpdateQuestion/UpdateQuestion.jsx';
 import CreateQuestion from './pages/UpdateQuestion/CreateQuestion.jsx';
 import Signup from './pages/Signup/Signup.jsx';
 import Login from './pages/Login/Login.jsx';
+import NotFound from './pages/NotFound/NotFound';
 
 import background from "./assets/bg.jpg";
 
@@ -45,9 +46,11 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path='/profile/update' component={UpdateProfile} />
           <Route exact path="/questions" component={QuestionList} />
-          <Route exact path="/questions/detail" component={QuestionDetail} />
-          <Route exact path="/questions/update" component={UpdateQuestion} />
+          <Route exact path="/questions/detail/:questionId" component={QuestionDetail} />
+          <Route exact path="/questions/update/:questionId" component={UpdateQuestion} />
           <Route exact path="/questions/create" component={CreateQuestion} />
+          <Route path="/404" component={NotFound} />
+          <Redirect to="/404" />
         </Switch>
       </BrowserRouter>
     </div>

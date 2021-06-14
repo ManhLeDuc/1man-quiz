@@ -23,7 +23,6 @@ export default class Wrapper extends Component {
       })
         .then((res) => { return res.json(); })
         .then((data) => {
-          console.log(data);
           if (data.name) {
             this.setState({
               login: true,
