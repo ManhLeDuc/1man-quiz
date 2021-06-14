@@ -28,7 +28,7 @@ class Rank extends React.Component {
 
   componentDidMount() {
 
-    fetch(`http://localhost:3001/api/topRank`, {
+    fetch(`127.0.0.1:3001/api/topRank`, {
       method: 'GET',
       headers: authHeader(),
       credentials: 'include',
@@ -52,7 +52,7 @@ class Rank extends React.Component {
 
 
     if (authenticationService.currentUserValue) {
-      fetch(`http://localhost:3001/api/me`, {
+      fetch(`127.0.0.1:3001/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',

@@ -52,7 +52,7 @@ class Profile extends React.Component {
     if (this.state.name)
       formData.append("name", this.state.name);
 
-    fetch(`http://localhost:3001/api/user/update`, {
+    fetch(`127.0.0.1:3001/api/user/update`, {
       method: 'PUT',
       headers: authHeaderDataForm(),
       credentials: 'include',
@@ -83,7 +83,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`http://localhost:3001/api/me`, {
+      fetch(`127.0.0.1:3001/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',
@@ -95,7 +95,7 @@ class Profile extends React.Component {
           if (data.name) {
             this.setState({
               name: data.name,
-              url: `http://localhost:3001${data.avatarUrl}`,
+              url: `https://guarded-oasis-70016.herokuapp.com${data.avatarUrl}`,
             });
           }
           else {

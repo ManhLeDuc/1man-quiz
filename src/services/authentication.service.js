@@ -30,7 +30,7 @@ function login(username, password) {
         }),
     };
 
-    return fetch(`http://localhost:3001/api/login`, requestOptions)
+    return fetch(`127.0.0.1:3001/api/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             localStorage.setItem('currentUser', JSON.stringify(user));

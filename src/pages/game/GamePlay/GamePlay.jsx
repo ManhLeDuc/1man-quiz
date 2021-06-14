@@ -19,7 +19,7 @@ export default function GamePlay({ updateQuestion, answers, question }) {
     try{
       if (gameOverScore !== -1) {
         setGameOverScore(gameOverScore);
-        const result = await fetch(`http://localhost:3001/api/play`, {
+        const result = await fetch(`127.0.0.1:3001/api/play`, {
           method: 'PUT',
           headers: authHeader(),
           credentials: 'include',

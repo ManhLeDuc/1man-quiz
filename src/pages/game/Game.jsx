@@ -42,7 +42,7 @@ class Game extends React.Component {
 
 	updateQuestion = async () => {
 		try {
-			const result = await fetch(`http://localhost:3001/api/play`, {
+			const result = await fetch(`127.0.0.1:3001/api/play`, {
 				method: 'PUT',
 				headers: authHeader(),
 				credentials: 'include',

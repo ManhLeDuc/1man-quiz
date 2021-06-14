@@ -15,7 +15,7 @@ export default class Wrapper extends Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`http://localhost:3001/api/me`, {
+      fetch(`127.0.0.1:3001/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',

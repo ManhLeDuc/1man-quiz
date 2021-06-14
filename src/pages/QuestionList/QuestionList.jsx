@@ -33,7 +33,7 @@ class QuestionList extends React.Component {
 
   getQuestions(pageNumber, pageSize) {
     if (authenticationService.currentUserValue) {
-      fetch(`http://localhost:3001/api/questions`, {
+      fetch(`127.0.0.1:3001/api/questions`, {
         method: 'PUT',
         headers: authHeader(),
         credentials: 'include',

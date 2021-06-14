@@ -83,7 +83,7 @@ class SignUp extends Component {
     this.setState({
       loading: true,
     })
-    fetch('http://localhost:3001/api/register', {
+    fetch('127.0.0.1:3001/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

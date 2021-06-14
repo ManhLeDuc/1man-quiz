@@ -67,7 +67,7 @@ class CreateQuestion extends React.Component {
       let correct_answer = this.state.answers[this.state.correctIndex];
       let incorrect_answers = this.state.answers.filter((answer, index) => index !== this.state.correctIndex);
 
-      fetch(`http://localhost:3001/api/questions`, {
+      fetch(`127.0.0.1:3001/api/questions`, {
         method: 'POST',
         headers: authHeader(),
         credentials: 'include',
