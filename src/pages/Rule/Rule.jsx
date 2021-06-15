@@ -12,10 +12,17 @@ export default function QuestionList() {
       <Row className="justify-content-center">
         <Col lg="7" xl="7" className="ruleDetail">
           <Row className="justify-content-center">
-            <label style={{ fontSize: '35px' }}>ゲームルール</label>
+            <label style={{ fontSize: '35px' }}>ゲーム紹介</label>
           </Row>
           <Row className="justify-content-center">
-            <p style={{ textAlign: 'justify', padding: '20px' }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+            <div style={{ textAlign: 'justify', padding: '20px' }}>
+            <p>これはクイズに答えるゲームです。</p>
+            <p>あなたは自分のスコアー・トップランク・自分が追加したクイズ・プロフィールが確認できます。</p>
+          　<p>そして自分でクイズ追加・編集・削除できます。</p>
+            <p>ゲームをするとき、４つの答えから１つの正解もの選び、答えが正しければ、５ポイントをもらい、間違えると１ポイントを失い、３回間違えるとらゲーム終了になります。</p>																							
+            <p>オープン環境のためあなたの知識を共有して下さい。</p>　																							
+            <p>！アカウントがない場合はサインアップしてください。</p>																							
+            </div>
           </Row>
         </Col>
       </Row>

@@ -69,9 +69,9 @@ class Login extends Component {
     return (
       <div className="login-dark">
         <form onSubmit={this.handleSubmit}>
-          <h2 className="sr-only">Login Form</h2>
+          <h2 className="sr-only">サインイン</h2>
           <div className="illustration">
-            <span>Login</span>
+            <span>サインイン</span>
           </div>
           <div className="form-group">
             <input
@@ -99,7 +99,7 @@ class Login extends Component {
               ?
               <div className="form-group">
                 <button className="btn btn-primary btn-block" onClick={this.handleSubmit}>
-                  Log In
+                  サインイン
               </button>
               </div>
               :
@@ -110,7 +110,7 @@ class Login extends Component {
               </div>
           }
           <p className="forgot">
-            If you don't have an account, please sign up.
+            アカウントがない場合、サインアップしてください！
           </p>
         </form>
       </div>

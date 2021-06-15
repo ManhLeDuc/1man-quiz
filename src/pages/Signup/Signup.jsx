@@ -127,7 +127,7 @@ class SignUp extends Component {
     return (
       <div className="login-dark">
         <form method="post">
-          <h2 className="sr-only">Sign Up Form</h2>
+          <h2 className="sr-only">サインアップ</h2>
           <div className="illustration">
             {/* <i className="icon ion-ios-locked-outline" ></i> */}
             <span>Sign</span>
@@ -175,7 +175,7 @@ class SignUp extends Component {
           {(!this.state.fail_message) ? <div></div> : <div className="alert alert-danger">{this.state.fail_message}</div>}
           <div className="form-group">
             <button className="btn btn-primary btn-block" onClick={this.handleSubmit} >
-              Sign up
+              登録
             </button>
           </div>
           {/* <a href="#" className="forgot">Forgot your email or password?</a> */}

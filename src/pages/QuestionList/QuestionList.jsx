@@ -73,7 +73,7 @@ class QuestionList extends React.Component {
               style={{ width: '100%', fontSize: '25px' }}
               onClick={() => { window.location.href = '/questions/create' }}
             >
-              Create Question
+              クイズ追加
             </Button>
           </Col>
         </Row>

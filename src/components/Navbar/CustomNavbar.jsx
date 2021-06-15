@@ -9,7 +9,7 @@ export default function CustomNavbar({ login, username, email, url }) {
   if (login) {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">HomePage</Navbar.Brand>
+        <Navbar.Brand href="/">「なぜ？」１万問</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -28,7 +28,7 @@ export default function CustomNavbar({ login, username, email, url }) {
               authenticationService.logout();
               window.location.href = "/"
             }}>
-              Log out
+              サインアウト
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -38,16 +38,16 @@ export default function CustomNavbar({ login, username, email, url }) {
   else {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">HomePage</Navbar.Brand>
+        <Navbar.Brand href="/">「なぜ？」１万問</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
           { }
           <Nav>
-            <Nav.Link href='/login'>Login</Nav.Link>
+            <Nav.Link href='/login'>サインイン</Nav.Link>
             <Nav.Link href='/signup'>
-              Sign up
+              サインアップ
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

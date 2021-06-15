@@ -158,7 +158,7 @@ class Profile extends React.Component {
                   style={{ width: '100%', fontSize: '25px' }}
                   onClick={this.handleUpdate}
                 >
-                  Update
+                  変更
                 </Button>
               </Col>
             </Row>
