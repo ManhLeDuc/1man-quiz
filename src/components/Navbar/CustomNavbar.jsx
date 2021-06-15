@@ -19,7 +19,7 @@ export default function CustomNavbar({ login, username, email, url }) {
 
           <Nav>
             <Nav.Link href="/profile">
-              <Image src={`https://guarded-oasis-70016.herokuapp.com${url}`} roundedCircle style={{
+              <Image src={`https://guarded-oasis-70016.herokuapp.com/${url}`} roundedCircle style={{
                 height: '50px',
                 width: '50px'
               }} />

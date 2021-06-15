@@ -40,7 +40,7 @@ class UpdateQuestion extends React.Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/questions/${this.state.questionId}`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions/${this.state.questionId}`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',
@@ -96,7 +96,7 @@ class UpdateQuestion extends React.Component {
       let correct_answer = this.state.answers[this.state.correctIndex];
       let incorrect_answers = this.state.answers.filter((answer, index) => index !== this.state.correctIndex);
 
-      fetch(`127.0.0.1:3001/api/questions/${this.state.questionId}`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions/${this.state.questionId}`, {
         method: 'PUT',
         headers: authHeader(),
         credentials: 'include',

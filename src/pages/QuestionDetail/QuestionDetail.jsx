@@ -33,7 +33,7 @@ class QuestionDetail extends React.Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/questions/${this.state.questionId}`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions/${this.state.questionId}`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',
@@ -67,7 +67,7 @@ class QuestionDetail extends React.Component {
 
   handleDelete = () => {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/questions/${this.state.questionId}`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions/${this.state.questionId}`, {
         method: 'DELETE',
         headers: authHeader(),
         credentials: 'include',
@@ -93,7 +93,7 @@ class QuestionDetail extends React.Component {
 
   handleActivate = () => {
     if (this.state.isAdmin) {
-      fetch(`127.0.0.1:3001/api/questions/${this.state.questionId}/active`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions/${this.state.questionId}/active`, {
         method: 'PUT',
         headers: authHeader(),
         credentials: 'include',

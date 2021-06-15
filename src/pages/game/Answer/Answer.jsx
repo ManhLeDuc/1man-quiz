@@ -19,7 +19,7 @@ const Answer = ({ text, callback, active, setActive }) => {
       if (active) {
         setActive(false);
         setClassName("answer active");
-        const result = await fetch(`127.0.0.1:3001/api/answer`, {
+        const result = await fetch(`https://guarded-oasis-70016.herokuapp.com/api/answer`, {
           method: 'PUT',
           headers: authHeader(),
           credentials: 'include',

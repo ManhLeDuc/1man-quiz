@@ -28,7 +28,7 @@ class Rank extends React.Component {
 
   componentDidMount() {
 
-    fetch(`127.0.0.1:3001/api/topRank`, {
+    fetch(`https://guarded-oasis-70016.herokuapp.com/api/topRank`, {
       method: 'GET',
       headers: authHeader(),
       credentials: 'include',
@@ -52,7 +52,7 @@ class Rank extends React.Component {
 
 
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/me`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',

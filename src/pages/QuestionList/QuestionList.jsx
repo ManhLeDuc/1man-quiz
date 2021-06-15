@@ -33,7 +33,7 @@ class QuestionList extends React.Component {
 
   getQuestions(pageNumber, pageSize) {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/questions`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/questions`, {
         method: 'PUT',
         headers: authHeader(),
         credentials: 'include',

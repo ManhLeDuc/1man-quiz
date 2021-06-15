@@ -29,7 +29,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/me`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',
@@ -67,7 +67,7 @@ class Profile extends React.Component {
           <Col lg="9" xl="9">
             <Row className="justify-content-around my-5">
               <Col sm="6" md="6" lg="3" xl="3">
-                <Image src={`127.0.0.1:3001/${this.state.url}`} roundedCircle style={{
+                <Image src={`https://guarded-oasis-70016.herokuapp.com/${this.state.url}`} roundedCircle style={{
                   height: '220px',
                   width: '220px'
                 }} />

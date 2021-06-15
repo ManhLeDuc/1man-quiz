@@ -83,7 +83,7 @@ class SignUp extends Component {
     this.setState({
       loading: true,
     })
-    fetch('127.0.0.1:3001/api/register', {
+    fetch('https://guarded-oasis-70016.herokuapp.com/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

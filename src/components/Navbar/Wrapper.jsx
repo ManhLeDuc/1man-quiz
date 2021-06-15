@@ -15,7 +15,7 @@ export default class Wrapper extends Component {
 
   componentDidMount() {
     if (authenticationService.currentUserValue) {
-      fetch(`127.0.0.1:3001/api/me`, {
+      fetch(`https://guarded-oasis-70016.herokuapp.com/api/me`, {
         method: 'GET',
         headers: authHeader(),
         credentials: 'include',
