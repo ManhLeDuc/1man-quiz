@@ -71,7 +71,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <h2 className="sr-only">サインイン</h2>
           <div className="illustration">
-            <span>サインイン</span>
+            <span>Login</span>
           </div>
           <div className="form-group">
             <input

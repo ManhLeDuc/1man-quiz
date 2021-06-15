@@ -39,7 +39,7 @@ const Answer = ({ text, callback, active, setActive }) => {
             setClassName(tempClassName);
             delay(3000, ()=>{
               setClassName("answer");
-              if(result.data.gameOverScore){
+              if(result.data.gameOverScore || result.data.gameOverScore===0){
                 callback(result.data.gameOverScore);
               }
               else{

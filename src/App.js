@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import CustomNavbar from './components/Navbar/Wrapper';
 
 //import Game from './pages/Game/Game.jsx';
-import Game from './pages/game/Game';
+import Game from './pages/Game/Game';
 import Home from './pages/Home/Home.jsx';
 import Rank from './pages/Rank/Rank.jsx';
 import Rule from './pages/Rule/Rule.jsx';

@@ -6,38 +6,21 @@ import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-import { authHeader } from '../../../helpers';
-
 export default function GamePlay({ updateQuestion, answers, question }) {
 
   const [active, setActive] = React.useState(true);
   const [show, setShow] = React.useState(false);
   const [gameOverScore, setGameOverScore] = React.useState(-1);
-  const [bestScore, setBestScore] = React.useState(0);
 
   const callback = async (gameOverScore) => {
-    try{
-      if (gameOverScore !== -1) {
-        setGameOverScore(gameOverScore);
-        const result = await fetch(`https://guarded-oasis-70016.herokuapp.com/api/play`, {
-          method: 'PUT',
-          headers: authHeader(),
-          credentials: 'include',
-        }).then((res) => { return res.json(); });
-        if(result.bestScore){
-          setBestScore(result.bestScore);
-        } 
-        setShow(true);
-      }
-      else {
-        updateQuestion();
-        setActive(true);
-      }
+    if (gameOverScore !== -1) {
+      setGameOverScore(gameOverScore);
+      setShow(true);
     }
-    catch(error){
-      window.alert(error.message);
+    else {
+      updateQuestion();
+      setActive(true);
     }
-
   }
 
   return (
@@ -55,11 +38,8 @@ export default function GamePlay({ updateQuestion, answers, question }) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Row className="justify-content-center" style={{fontSize:'12px'}}>
-            {gameOverScore}
-          </Row>
-          <Row className="justify-content-center" style={{fontSize:'14px'}}>
-            一番最高スコアー: {bestScore}
+          <Row className="justify-content-center" style={{ fontSize: '30px' }}>
+          スコア：{gameOverScore}
           </Row>
         </Modal.Body>
         <Modal.Footer>
@@ -68,7 +48,7 @@ export default function GamePlay({ updateQuestion, answers, question }) {
             setActive(true);
           }}>
             もう一度やってみよう
-            </Button>
+          </Button>
           <Button variant="secondary" onClick={() => { window.location.href = "/rank" }}>
             トップランク
           </Button>
