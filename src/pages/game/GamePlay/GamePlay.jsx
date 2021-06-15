@@ -49,7 +49,7 @@ export default function GamePlay({ updateQuestion, answers, question }) {
         <Modal.Header closeButton>
           <Modal.Title>
             <Container>
-              <Row className="justify-content-center"> Game Over!!!</Row>
+              <Row className="justify-content-center"> 失敗した!!!</Row>
             </Container>
 
           </Modal.Title>
@@ -59,7 +59,7 @@ export default function GamePlay({ updateQuestion, answers, question }) {
             {gameOverScore}
           </Row>
           <Row className="justify-content-center" style={{fontSize:'14px'}}>
-            Your Best Score: {bestScore}
+            一番最高スコアー: {bestScore}
           </Row>
         </Modal.Body>
         <Modal.Footer>
@@ -67,10 +67,10 @@ export default function GamePlay({ updateQuestion, answers, question }) {
             setShow(false); updateQuestion();
             setActive(true);
           }}>
-            Play Again
+            もう一度やってみよう
             </Button>
           <Button variant="secondary" onClick={() => { window.location.href = "/rank" }}>
-            Top Rank
+            トップランク
           </Button>
         </Modal.Footer>
       </Modal>

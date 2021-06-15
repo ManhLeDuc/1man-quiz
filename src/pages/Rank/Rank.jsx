@@ -108,7 +108,7 @@ class Rank extends React.Component {
             }
 
             <Row className="yourRank my-5">
-              <Col sm="3" md="3" lg="3" xl="3" >You</Col>
+              <Col sm="3" md="3" lg="3" xl="3" >あなた</Col>
               <Col sm="6" md="6" lg="6" xl="6" >{this.state.yourName}</Col>
               <Col sm="3" md="3" lg="3" xl="3" >{this.state.yourBestScore}</Col>
             </Row>

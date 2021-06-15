@@ -16,7 +16,7 @@ export default function Home() {
       </Row>
       <Row className="justify-content-end">
         <Col sm="3" md="3" lg="3" xl="3">
-          <Button variant="secondary" onClick={() => { window.location.href = "/rule" }}>Rule</Button>
+          <Button variant="secondary" onClick={() => { window.location.href = "/rule" }}>ゲーム紹介</Button>
         </Col>
       </Row>
     </Container>

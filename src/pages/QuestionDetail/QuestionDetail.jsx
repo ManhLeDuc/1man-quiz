@@ -157,7 +157,7 @@ class QuestionDetail extends React.Component {
                       style={{ width: '100%', fontSize: '25px', visibility: this.checkEditable() ? 'visible' : 'hidden', }}
                       onClick={() => { this.handleUpdate() }}
                     >
-                      Update
+                      編集
                     </Button>
                   </Col>
                   <Col sm="6" md="6" lg="6" xl="6">
@@ -165,7 +165,7 @@ class QuestionDetail extends React.Component {
                       style={{ width: '100%', fontSize: '25px', visibility: this.checkEditable() ? 'visible' : 'hidden', }}
                       onClick={() => { this.handleDelete() }}
                     >
-                      Delete
+                      削除
                     </Button>
                   </Col>
                 </Row>

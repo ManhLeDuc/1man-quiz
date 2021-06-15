@@ -31,8 +31,8 @@ export default function QuestionItem({ question, questionId, isActive, createAt 
     <Row className={`my-2 ${className}`}>
       <Col sm="5" md="5" lg="5" xl="5" className='field1 text-truncate'>{question}</Col>
       <Col sm="3" md="3" lg="3" xl="3" className='field1'>{`${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`}</Col>
-      <Col sm="2" md="2" lg="2" xl="2" className='field' onClick={detailHandle}>Detail</Col>
-      <Col sm="2" md="2" lg="2" xl="2" className='field' onClick={updateHandle}>Change</Col>
+      <Col sm="2" md="2" lg="2" xl="2" className='field' onClick={detailHandle}>詳細</Col>
+      <Col sm="2" md="2" lg="2" xl="2" className='field' onClick={updateHandle}>編集</Col>
     </Row>
   )
 }

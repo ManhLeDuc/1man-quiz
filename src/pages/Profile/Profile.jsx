@@ -87,7 +87,7 @@ class Profile extends React.Component {
                   style={{ width: '100%', fontSize: '25px' }}
                   onClick={() => window.location.href = '/profile/update'}
                 >
-                  Update
+                  プロフィール編集
                 </Button>
               </Col>
               <Col sm="9" md="9" lg="5" xl="5">
@@ -95,7 +95,7 @@ class Profile extends React.Component {
                   style={{ width: '100%', fontSize: '25px' }}
                   onClick={() => window.location.href = '/questions'}
                 >
-                  Your Questions
+                  追加したクイズ
                 </Button>
               </Col>
             </Row>
